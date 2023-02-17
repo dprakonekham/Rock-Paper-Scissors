@@ -10,7 +10,6 @@ function getPlayerChoice(){
 
     while(acceptableChoice==0){
         playerChoice = prompt("Type Rock, Paper, or Scissors")
-        console.log(playerChoice)
         if(acceptableChoices.includes(playerChoice.toLowerCase())){
             acceptableChoice = 1;
         }
@@ -18,8 +17,48 @@ function getPlayerChoice(){
             console.log("Not acceptable. type Rock, Paper, or Scissors");
         }
     }
-    return playerChoice.toLowerCase;
+    return playerChoice.toLowerCase()
+}
+
+function playRound(getPlayerChoice,getComputerChoice){
+    if(getPlayerChoice == "rock"){
+        if(getComputerChoice == "rock"){
+            console.log("You picked Rock and the Computer chose Rock. You tie!");
+            return 3;
+        }else if(getComputerChoice == "paper"){
+            console.log("You picked Rock and the Computer chose paper. You lose!");
+            return 2;
+        }else{
+            console.log("You picked Rock and the Computer chose Scissors. You win!");
+            return 1;
+        }
+    }else if(getPlayerChoice == "paper"){
+        if(getComputerChoice == "rock"){
+            console.log("You picked Paper and the Computer chose Rock. You win!");
+            return 1;
+        }else if(getComputerChoice == "paper"){
+            console.log("You picked Paper and the Computer chose paper. You tie!");
+            return 3;
+        }else{
+            console.log("You picked Paper and the Computer chose Scissors. You lose!");
+            return 2;
+        }
+    }else if(getPlayerChoice == "scissors"){
+        if(getComputerChoice == "rock"){
+            console.log("You picked Scissors and the Computer chose Rock. You lose!");
+            return 2;
+        }else if(getComputerChoice == "paper"){
+            console.log("You picked Scissors and the Computer chose paper. You win!");
+            return 1;
+        }else{
+            console.log("You picked Scissors and the Computer chose Scissors. You tie!");
+            return 3;
+        }
+    }
+    //returns 1 if you win, 2 if you lose, 3 if you tie
 }
 
 let player = getPlayerChoice();
 let computer = getComputerChoice();
+let result = playRound()
+console.log(result)
