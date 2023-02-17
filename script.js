@@ -63,18 +63,16 @@ function game(){
     let playerWins = 0;
     let computerWins = 0;
     while(gameCounter != 5){
-        console.log("Player wins: " + playerWins)
-        console.log("Computer wins: " + computerWins)
         let gameOutcome = playRound(getPlayerChoice(),getComputerChoice());
         if(gameOutcome == 1){
             playerWins++;
         } else if(gameOutcome == 2){
             computerWins++;
         }
+        console.log("Player wins: " + playerWins)
+        console.log("Computer wins: " + computerWins)
         gameCounter++;
     }
-    console.log("Player wins: " + playerWins)
-    console.log("Computer wins: " + computerWins)
 }
 
 
