@@ -58,7 +58,24 @@ function playRound(getPlayerChoice,getComputerChoice){
     //returns 1 if you win, 2 if you lose, 3 if you tie
 }
 
-let player = getPlayerChoice();
-let computer = getComputerChoice();
-let result = playRound()
-console.log(result)
+function game(){
+    let gameCounter = 0;
+    let playerWins = 0;
+    let computerWins = 0;
+    while(gameCounter != 5){
+        console.log("Player wins: " + playerWins)
+        console.log("Computer wins: " + computerWins)
+        let gameOutcome = playRound(getPlayerChoice(),getComputerChoice());
+        if(gameOutcome == 1){
+            playerWins++;
+        } else if(gameOutcome == 2){
+            computerWins++;
+        }
+        gameCounter++;
+    }
+    console.log("Player wins: " + playerWins)
+    console.log("Computer wins: " + computerWins)
+}
+
+
+game();
