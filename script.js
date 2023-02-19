@@ -3,24 +3,7 @@ function getComputerChoice(){
     return computerChoice[Math.floor(Math.random() * 3)];
 }
 
-function getPlayerChoice(){
-    let acceptableChoice = 0;
-    let acceptableChoices = ["rock", "paper", "scissors"];
-    let playerChoice;
-
-    while(acceptableChoice==0){
-        playerChoice = prompt("Type Rock, Paper, or Scissors")
-        if(acceptableChoices.includes(playerChoice.toLowerCase())){
-            acceptableChoice = 1;
-        }
-        else{
-            console.log("Not acceptable. type Rock, Paper, or Scissors");
-        }
-    }
-    return playerChoice.toLowerCase()
-}
-
-function playRound(getPlayerChoice,getComputerChoice){
+function playRound(playerChoice,getComputerChoice){
     if(getPlayerChoice == "rock"){
         if(getComputerChoice == "rock"){
             console.log("You picked Rock and the Computer chose Rock. You tie!");
@@ -62,15 +45,15 @@ const paperButton = document.getElementById('pBtn')
 const scissorsButton = document.getElementById('sBtn')
 
 rockButton.addEventListener(`click`,function(e){
-    playRound(getPlayerChoice(),getComputerChoice())
+    playRound('rock',getComputerChoice())
 });
 
 paperButton.addEventListener(`click`,function(e){
-    playRound(getPlayerChoice(),getComputerChoice())
+    playRound('paper',getComputerChoice())
 });
 
 scissorsButton.addEventListener(`click`,function(e){
-    playRound(getPlayerChoice(),getComputerChoice())
+    playRound('scissors',getComputerChoice())
 });
 
 /*
