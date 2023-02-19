@@ -82,7 +82,7 @@ resetButton.addEventListener(`click`,function(e){
 
 let playerWins = 0;
 let computerWins = 0;
-//resetButton.style.display = "none";
+resetButton.style.display = "none";
 
 function game(playerChoice){
     pChoiceDisplay.textContent = playerChoice.toUpperCase() + "!";
@@ -121,7 +121,7 @@ function reset(){
     pChoiceDisplay.textContent = "";
     cChoiceDisplay.textContent = "";
     winnerDisplay.textContent = "";
-
+    //Reset back to placeholder image
     playerImageDisplay.src = "https://via.placeholder.com/150/FFFFFF/FFFFFF?Text=Down.com"
     computerImageDisplay.src = "https://via.placeholder.com/150/FFFFFF/FFFFFF?Text=Down.com"
 }
