@@ -45,7 +45,8 @@ const paperButton = document.getElementById('pBtn');
 const scissorsButton = document.getElementById('sBtn');
 const playerScore = document.getElementById('pScore');
 const computerScore = document.getElementById('cScore');
-const resetButton = document.getElementById('resetBtn')
+const resetButton = document.getElementById('resetBtn');
+const choiceDisplay = document.getElementById('pChoice');
 
 rockButton.addEventListener(`click`,function(e){
     game('rock');
@@ -66,6 +67,7 @@ let playerWins = 0;
 let computerWins = 0;
 
 function game(playerChoice){
+    choiceDisplay.textContent = playerChoice.toUpperCase() + "!";
     let gameOutcome = playRound(playerChoice,getComputerChoice())
     if(gameOutcome == 1){
         playerWins++;
@@ -98,5 +100,4 @@ function reset(){
     rockButton.disabled = false;
     paperButton.disabled = false;
     scissorsButton.disabled = false;
-
 }
