@@ -43,6 +43,8 @@ function playRound(playerChoice,computerChoice){
 const rockButton = document.getElementById('rBtn')
 const paperButton = document.getElementById('pBtn')
 const scissorsButton = document.getElementById('sBtn')
+const playerScore = document.getElementById('pScore')
+const computerScore = document.getElementById('cScore')
 
 rockButton.addEventListener(`click`,function(e){
     game('rock')
@@ -56,8 +58,8 @@ scissorsButton.addEventListener(`click`,function(e){
     game('scissors')
 });
 
-let playerWins;
-let computerWins;
+let playerWins = 0;
+let computerWins = 0;
 
 function game(playerChoice){
     let gameOutcome = playRound(playerChoice,getComputerChoice())
@@ -67,6 +69,13 @@ function game(playerChoice){
         computerWins++;
     }
 
+    playerScore.textContent = "My Score: " + playerWins;
+    computerScore.textContent = "Computer Score: " + computerWins;
+
+    if(playerWins == 5 || computerWins ==5){
+        //prompt user to reset game
+        
+    }
 }
 
 function reset(){
