@@ -40,22 +40,26 @@ function playRound(playerChoice,computerChoice){
     }
     //returns 1 if you win, 2 if you lose, 3 if you tie
 }
-const rockButton = document.getElementById('rBtn')
-const paperButton = document.getElementById('pBtn')
-const scissorsButton = document.getElementById('sBtn')
-const playerScore = document.getElementById('pScore')
-const computerScore = document.getElementById('cScore')
+const rockButton = document.getElementById('rBtn');
+const paperButton = document.getElementById('pBtn');
+const scissorsButton = document.getElementById('sBtn');
+const playerScore = document.getElementById('pScore');
+const computerScore = document.getElementById('cScore');
+const resetButton = document.getElementById('resetBtn')
 
 rockButton.addEventListener(`click`,function(e){
-    game('rock')
+    game('rock');
 });
 
 paperButton.addEventListener(`click`,function(e){
-    game('paper')
+    game('paper');
 });
 
 scissorsButton.addEventListener(`click`,function(e){
-    game('scissors')
+    game('scissors');
+});
+resetButton.addEventListener(`click`,function(e){
+    reset();
 });
 
 let playerWins = 0;
@@ -73,12 +77,17 @@ function game(playerChoice){
     computerScore.textContent = "Computer Score: " + computerWins;
 
     if(playerWins == 5 || computerWins ==5){
-        //prompt user to reset game
-        
+        //Show the reset button
+        resetButton.style.display = "block";
     }
 }
 
 function reset(){
+    //Set the wins to 0
     playerWins = 0;
     computerWins = 0;
+    playerScore.textContent = "My Score: " + playerWins;
+    computerScore.textContent = "Computer Score: " + computerWins;
+    //Rehide the reset button
+    resetButton.style.display = "none";
 }
