@@ -79,6 +79,10 @@ function game(playerChoice){
     if(playerWins == 5 || computerWins ==5){
         //Show the reset button
         resetButton.style.display = "block";
+        //Disable the buttons
+        rockButton.disabled = true;
+        paperButton.disabled = true;
+        scissorsButton.disabled = true;
     }
 }
 
@@ -90,4 +94,9 @@ function reset(){
     computerScore.textContent = "Computer Score: " + computerWins;
     //Rehide the reset button
     resetButton.style.display = "none";
+    //Renable the buttons
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+
 }
