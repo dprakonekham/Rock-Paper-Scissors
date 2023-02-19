@@ -57,7 +57,29 @@ function playRound(getPlayerChoice,getComputerChoice){
     }
     //returns 1 if you win, 2 if you lose, 3 if you tie
 }
+const rockButton = document.getElementById('rBtn')
+const paperButton = document.getElementById('pBtn')
+const scissorsButton = document.getElementById('sBtn')
 
+rockButton.addEventListener(`click`,function(e){
+    playRound(getPlayerChoice(),getComputerChoice())
+});
+
+paperButton.addEventListener(`click`,function(e){
+    playRound(getPlayerChoice(),getComputerChoice())
+});
+
+scissorsButton.addEventListener(`click`,function(e){
+    playRound(getPlayerChoice(),getComputerChoice())
+});
+
+/*
+rockButton.addEventListener(`click`, playRound)
+paperButton.addEventListener(`click`, )
+scissorsButton.addEventListener(`click`, )
+*/
+
+/*
 function game(){
     let gameCounter = 0;
     let playerWins = 0;
@@ -74,6 +96,5 @@ function game(){
         gameCounter++;
     }
 }
+*/
 
-
-game();
