@@ -50,6 +50,8 @@ const resetButton = document.getElementById('resetBtn');
 const pChoiceDisplay = document.getElementById('pChoice');
 const cChoiceDisplay = document.getElementById('cChoice');
 const winnerDisplay = document.getElementById('winnerTxt');
+const playerImageDisplay = document.getElementById('iContainerP');
+const computerImageDisplay = document.getElementById('iContainerC');
 
 
 rockButton.addEventListener(`click`,function(e){
@@ -107,4 +109,5 @@ function reset(){
     scissorsButton.disabled = false;
     pChoiceDisplay.textContent = "";
     cChoiceDisplay.textContent = "";
+    winnerDisplay.textContent = "";
 }
