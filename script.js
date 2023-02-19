@@ -3,34 +3,34 @@ function getComputerChoice(){
     return computerChoice[Math.floor(Math.random() * 3)];
 }
 
-function playRound(playerChoice,getComputerChoice){
-    if(getPlayerChoice == "rock"){
-        if(getComputerChoice == "rock"){
+function playRound(playerChoice,computerChoice){
+    if(playerChoice == "rock"){
+        if(computerChoice == "rock"){
             console.log("You picked Rock and the Computer chose Rock. You tie!");
             return 3;
-        }else if(getComputerChoice == "paper"){
+        }else if(computerChoice == "paper"){
             console.log("You picked Rock and the Computer chose paper. You lose!");
             return 2;
         }else{
             console.log("You picked Rock and the Computer chose Scissors. You win!");
             return 1;
         }
-    }else if(getPlayerChoice == "paper"){
-        if(getComputerChoice == "rock"){
+    }else if(playerChoice == "paper"){
+        if(computerChoice == "rock"){
             console.log("You picked Paper and the Computer chose Rock. You win!");
             return 1;
-        }else if(getComputerChoice == "paper"){
+        }else if(computerChoice == "paper"){
             console.log("You picked Paper and the Computer chose paper. You tie!");
             return 3;
         }else{
             console.log("You picked Paper and the Computer chose Scissors. You lose!");
             return 2;
         }
-    }else if(getPlayerChoice == "scissors"){
-        if(getComputerChoice == "rock"){
+    }else if(playerChoice == "scissors"){
+        if(computerChoice == "rock"){
             console.log("You picked Scissors and the Computer chose Rock. You lose!");
             return 2;
-        }else if(getComputerChoice == "paper"){
+        }else if(computerChoice == "paper"){
             console.log("You picked Scissors and the Computer chose paper. You win!");
             return 1;
         }else{
@@ -45,39 +45,31 @@ const paperButton = document.getElementById('pBtn')
 const scissorsButton = document.getElementById('sBtn')
 
 rockButton.addEventListener(`click`,function(e){
-    playRound('rock',getComputerChoice())
+    game('rock')
 });
 
 paperButton.addEventListener(`click`,function(e){
-    playRound('paper',getComputerChoice())
+    game('paper')
 });
 
 scissorsButton.addEventListener(`click`,function(e){
-    playRound('scissors',getComputerChoice())
+    game('scissors')
 });
 
-/*
-rockButton.addEventListener(`click`, playRound)
-paperButton.addEventListener(`click`, )
-scissorsButton.addEventListener(`click`, )
-*/
+let playerWins;
+let computerWins;
 
-/*
-function game(){
-    let gameCounter = 0;
-    let playerWins = 0;
-    let computerWins = 0;
-    while(gameCounter != 5){
-        let gameOutcome = playRound(getPlayerChoice(),getComputerChoice());
-        if(gameOutcome == 1){
-            playerWins++;
-        } else if(gameOutcome == 2){
-            computerWins++;
-        }
-        console.log("Player wins: " + playerWins)
-        console.log("Computer wins: " + computerWins)
-        gameCounter++;
+function game(playerChoice){
+    let gameOutcome = playRound(playerChoice,getComputerChoice())
+    if(gameOutcome == 1){
+        playerWins++;
+    } else if(gameOutcome == 2){
+        computerWins++;
     }
-}
-*/
 
+}
+
+function reset(){
+    playerWins = 0;
+    computerWins = 0;
+}
