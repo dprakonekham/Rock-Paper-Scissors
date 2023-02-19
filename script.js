@@ -7,35 +7,35 @@ function playRound(playerChoice,computerChoice){
     cChoiceDisplay.textContent = computerChoice.toUpperCase() + "!";
     if(playerChoice == "rock"){
         if(computerChoice == "rock"){
-            console.log("You picked Rock and the Computer chose Rock. You tie!");
+            winnerDisplay.textContent = "You tie!";
             return 3;
         }else if(computerChoice == "paper"){
-            console.log("You picked Rock and the Computer chose paper. You lose!");
+            winnerDisplay.textContent = "You lose!";
             return 2;
         }else{
-            console.log("You picked Rock and the Computer chose Scissors. You win!");
+            winnerDisplay.textContent = "You win!";
             return 1;
         }
     }else if(playerChoice == "paper"){
         if(computerChoice == "rock"){
-            console.log("You picked Paper and the Computer chose Rock. You win!");
+            winnerDisplay.textContent = "You win!";
             return 1;
         }else if(computerChoice == "paper"){
-            console.log("You picked Paper and the Computer chose paper. You tie!");
+            winnerDisplay.textContent = "You tie!";
             return 3;
         }else{
-            console.log("You picked Paper and the Computer chose Scissors. You lose!");
+            winnerDisplay.textContent = "You lose!";
             return 2;
         }
     }else if(playerChoice == "scissors"){
         if(computerChoice == "rock"){
-            console.log("You picked Scissors and the Computer chose Rock. You lose!");
+            winnerDisplay.textContent = "You lose!";
             return 2;
         }else if(computerChoice == "paper"){
-            console.log("You picked Scissors and the Computer chose paper. You win!");
+            winnerDisplay.textContent = "You win!";
             return 1;
         }else{
-            console.log("You picked Scissors and the Computer chose Scissors. You tie!");
+            winnerDisplay.textContent = "You tie!";
             return 3;
         }
     }
@@ -49,6 +49,7 @@ const computerScore = document.getElementById('cScore');
 const resetButton = document.getElementById('resetBtn');
 const pChoiceDisplay = document.getElementById('pChoice');
 const cChoiceDisplay = document.getElementById('cChoice');
+const winnerDisplay = document.getElementById('winnerTxt');
 
 
 rockButton.addEventListener(`click`,function(e){
@@ -68,6 +69,7 @@ resetButton.addEventListener(`click`,function(e){
 
 let playerWins = 0;
 let computerWins = 0;
+//resetButton.style.display = "none";
 
 function game(playerChoice){
     pChoiceDisplay.textContent = playerChoice.toUpperCase() + "!";
@@ -83,7 +85,7 @@ function game(playerChoice){
 
     if(playerWins == 5 || computerWins ==5){
         //Show the reset button
-        resetButton.style.display = "block";
+        resetButton.style.display = "flex";
         //Disable the buttons
         rockButton.disabled = true;
         paperButton.disabled = true;
