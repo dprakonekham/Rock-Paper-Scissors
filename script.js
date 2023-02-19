@@ -5,6 +5,14 @@ function getComputerChoice(){
 
 function playRound(playerChoice,computerChoice){
     cChoiceDisplay.textContent = computerChoice.toUpperCase() + "!";
+    if(computerChoice == 'rock'){
+        computerImageDisplay.src = "/images/rock.jpg"
+    } else if(computerChoice == 'paper'){
+        computerImageDisplay.src = "/images/paper.jpg"
+    } else{
+        computerImageDisplay.src = "/images/scissors.jpg"
+    }
+
     if(playerChoice == "rock"){
         if(computerChoice == "rock"){
             winnerDisplay.textContent = "You tie!";
@@ -50,19 +58,22 @@ const resetButton = document.getElementById('resetBtn');
 const pChoiceDisplay = document.getElementById('pChoice');
 const cChoiceDisplay = document.getElementById('cChoice');
 const winnerDisplay = document.getElementById('winnerTxt');
-const playerImageDisplay = document.getElementById('iContainerP');
-const computerImageDisplay = document.getElementById('iContainerC');
+const playerImageDisplay = document.getElementById('pImage');
+const computerImageDisplay = document.getElementById('cImage');
 
 
 rockButton.addEventListener(`click`,function(e){
+    playerImageDisplay.src = "images/rock.jpg"
     game('rock');
 });
 
 paperButton.addEventListener(`click`,function(e){
+    playerImageDisplay.src = "images/paper.jpg"
     game('paper');
 });
 
 scissorsButton.addEventListener(`click`,function(e){
+    playerImageDisplay.src = "images/scissors.jpg"
     game('scissors');
 });
 resetButton.addEventListener(`click`,function(e){
@@ -110,4 +121,7 @@ function reset(){
     pChoiceDisplay.textContent = "";
     cChoiceDisplay.textContent = "";
     winnerDisplay.textContent = "";
+
+    playerImageDisplay.src = "https://via.placeholder.com/150/FFFFFF/FFFFFF?Text=Down.com"
+    computerImageDisplay.src = "https://via.placeholder.com/150/FFFFFF/FFFFFF?Text=Down.com"
 }

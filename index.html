@@ -8,8 +8,8 @@
     <body>
         <div class="playerContainer">
             <div class="playerScore" id="pScore">My Score: 0</div>
-            <div class="imageContainerP">
-                <img src="https://via.placeholder.com/150/FFFFFF/FFFFFF?Text=Down.com">
+            <div class="imageContainerP" id="iContainerP">
+                <img id="pImage"src="https://via.placeholder.com/150/FFFFFF/FFFFFF?Text=Down.com">
             </div>
             <div class="pButtonContainer">
                 <Button class="rock" id="rBtn">Rock!</Button>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="middleSection">
-            <div class="choiceContainer">
+            <div class="choiceContainer", id="iContainerC">
                 <div class="yourChoice" id="pChoice"> </div>
                 <div class="versus">VERSUS</div>
                 <div class="computerChoice" id="cChoice"> </div>
@@ -30,7 +30,9 @@
 
         <div class="computerContainer">
             <div class="computerScore" id="cScore">Computer Score: 0</div>
-            <div class="imageContainerC"></div>
+            <div class="imageContainerC">
+                <img id="cImage"src="https://via.placeholder.com/150/FFFFFF/FFFFFF?Text=Down.com">
+            </div>
             <div class="cButtonContainer">
                 <Button class="rock" id="rBtn2">Rock!</Button>
                 <Button class="paper" id="pBtn2">Paper!</Button>
