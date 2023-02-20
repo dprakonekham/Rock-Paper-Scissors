@@ -6,11 +6,11 @@ function getComputerChoice(){
 function playRound(playerChoice,computerChoice){
     cChoiceDisplay.textContent = computerChoice.toUpperCase() + "!";
     if(computerChoice == 'rock'){
-        computerImageDisplay.src = "/images/rock.jpg"
+        computerImageDisplay.src = "images/rock.jpg"
     } else if(computerChoice == 'paper'){
-        computerImageDisplay.src = "/images/paper.jpg"
+        computerImageDisplay.src = "images/paper.jpg"
     } else{
-        computerImageDisplay.src = "/images/scissors.jpg"
+        computerImageDisplay.src = "images/scissors.jpg"
     }
 
     if(playerChoice == "rock"){
