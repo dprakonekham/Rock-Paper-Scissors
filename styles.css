@@ -40,6 +40,10 @@ body{
 .reset{
     display: flex;
 }
+.disabled {
+    pointer-events: none;
+    opacity: .65;
+  }
 img{
     width: 100%;
     object-fit: contain;

@@ -6,10 +6,13 @@ function getComputerChoice(){
 function playRound(playerChoice,computerChoice){
     cChoiceDisplay.textContent = computerChoice.toUpperCase() + "!";
     if(computerChoice == 'rock'){
+        rockButton2.style.background = "red";
         computerImageDisplay.src = "images/rock.jpg"
     } else if(computerChoice == 'paper'){
+        paperButton2.style.background = "red";
         computerImageDisplay.src = "images/paper.jpg"
     } else{
+        scissorsButton2.style.background = "red";
         computerImageDisplay.src = "images/scissors.jpg"
     }
 
@@ -60,19 +63,31 @@ const cChoiceDisplay = document.getElementById('cChoice');
 const winnerDisplay = document.getElementById('winnerTxt');
 const playerImageDisplay = document.getElementById('pImage');
 const computerImageDisplay = document.getElementById('cImage');
+const rockButton2 = document.getElementById('rBtn2');
+const paperButton2 = document.getElementById('pBtn2');
+const scissorsButton2 = document.getElementById('sBtn2');
 
 
 rockButton.addEventListener(`click`,function(e){
+    rockButton2.style.background = "white";
+    paperButton2.style.background = "white";
+    scissorsButton2.style.background = "white";
     playerImageDisplay.src = "images/rock.jpg"
     game('rock');
 });
 
 paperButton.addEventListener(`click`,function(e){
+    rockButton2.style.background = "white";
+    paperButton2.style.background = "white";
+    scissorsButton2.style.background = "white";
     playerImageDisplay.src = "images/paper.jpg"
     game('paper');
 });
 
 scissorsButton.addEventListener(`click`,function(e){
+    rockButton2.style.background = "white";
+    paperButton2.style.background = "white";
+    scissorsButton2.style.background = "white";
     playerImageDisplay.src = "images/scissors.jpg"
     game('scissors');
 });
@@ -124,4 +139,7 @@ function reset(){
     //Reset back to placeholder image
     playerImageDisplay.src = "https://via.placeholder.com/150/FFFFFF/FFFFFF?Text=Down.com"
     computerImageDisplay.src = "https://via.placeholder.com/150/FFFFFF/FFFFFF?Text=Down.com"
+    rockButton2.style.background = "white";
+    paperButton2.style.background = "white";
+    scissorsButton2.style.background = "white";
 }
